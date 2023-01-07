@@ -7,4 +7,7 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier'],
 
   rules: { 'linebreak-style': 0, 'react/react-in-jsx-scope': 'off' },
+  globals: {
+    JSX: 'readonly',
+  },
 };
