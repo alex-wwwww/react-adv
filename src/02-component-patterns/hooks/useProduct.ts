@@ -9,6 +9,6 @@ export const useProduct = () => {
 
   return {
     counter,
-    increaseBy
+    increaseBy,
   };
 };
