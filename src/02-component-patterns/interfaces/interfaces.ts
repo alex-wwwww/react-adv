@@ -1,9 +1,7 @@
-import { ReactElement } from 'react';
-
-export interface ProductCardProps {
-  product: Product;
-  children?: ReactElement | ReactElement[];
-}
+import { Props as ProductButtonsProps } from '../components/ProductButtons';
+import { Props as ProductCardProps } from '../components/ProductCard';
+import { Props as ProductImageProps } from '../components/ProductImage';
+import { Props as ProductTitleProps } from '../components/ProductTitle';
 
 export interface ProductContextProps {
   counter: number;
@@ -20,10 +18,11 @@ export interface Product {
 
 export interface ProductCardHOCProps {
   // eslint-disable-next-line no-unused-vars
-  ({ children, product }: ProductCardProps): JSX.Element;
+  (Props: ProductCardProps): JSX.Element;
   // eslint-disable-next-line no-unused-vars
-  Title: ({ title }: { title?: string }) => JSX.Element;
+  Title: (Props: ProductTitleProps) => JSX.Element;
   // eslint-disable-next-line no-unused-vars
-  Image: ({ img }: { img?: string }) => JSX.Element;
-  Buttons: () => JSX.Element;
+  Image: (Props: ProductImageProps) => JSX.Element;
+  // eslint-disable-next-line no-unused-vars
+  Buttons: (Props: ProductButtonsProps) => JSX.Element;
 }
